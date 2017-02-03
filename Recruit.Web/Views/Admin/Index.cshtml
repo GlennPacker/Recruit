@@ -1,10 +1,10 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div data-ng-app="admin">
-    <div data-ng-controller="ServiceAdminCtrl as vm">
-        test{{vm.Msg}}test
-        data{{vm.Data}}dat
-    </div>
+<div class="menubackground"></div>
+@Html.Partial("_Nav")
 
+<div data-ng-app="admin">
+    @Html.Partial("_Vacancies")
+    @Html.Partial("_Services")
 </div>

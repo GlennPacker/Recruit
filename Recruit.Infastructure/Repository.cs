@@ -1,4 +1,5 @@
-﻿using Ninject;
+﻿using System;
+using Ninject;
 using Recruit.Domain;
 
 namespace Recruit.Infastructure
@@ -10,5 +11,9 @@ namespace Recruit.Infastructure
 
         [Inject]
         public IRepositoryBase<Icon> Icon { get; set; }
+
+        [Inject]
+        public IRepositoryBase<Vacancy> Vacancies { get; set; }
+        
     }
 }

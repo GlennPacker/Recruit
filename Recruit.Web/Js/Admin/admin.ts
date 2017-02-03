@@ -1,1 +1,3 @@
-﻿angular.module("admin", []);
+﻿module Admin {
+    angular.module("admin", ['common.services']);
+}

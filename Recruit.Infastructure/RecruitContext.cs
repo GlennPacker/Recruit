@@ -7,6 +7,7 @@ namespace Recruit.Infastructure
     {
         public DbSet<ServiceItem> ServiceItems { get; set; }
         public DbSet<Icon> Icons { get; set; }
+        public DbSet<Vacancy> Vacancies { get; set; }
 
         public RecruitContext(): base("DefaultConnection")
         {

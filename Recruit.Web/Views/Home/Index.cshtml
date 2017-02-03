@@ -2,15 +2,21 @@
     ViewBag.Title = "Home Page";
 }
 
-@Html.Partial("_Welcome")
-@Html.Partial("_Services")
+@Html.Partial("_Nav")
 
-@*@Html.Partial("_Portfolio")*@
+<div data-ng-app="app">
+    @Html.Partial("_Welcome")
+    
+    @Html.Partial("_Services")
 
-@Html.Partial("_Mission")
-@Html.Partial("_About")
-@Html.Partial("_Team")
-@Html.Partial("_Contact")
+    @*@Html.Partial("_Portfolio")*@
 
+    @Html.Partial("_Mission")
+    @Html.Partial("_About")
+    @Html.Partial("_Team")
+    @Html.Partial("_Vacancies")
+    <div style="height: 50px;"></div>
+    @Html.Partial("_Contact")
 
+</div>
 

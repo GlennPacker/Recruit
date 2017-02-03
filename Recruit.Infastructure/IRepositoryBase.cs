@@ -13,5 +13,6 @@ namespace Recruit.Infastructure
         void Update(T model);
         void Edit(T model);
         void Save();
+        void Delete(int id);
     }
 }

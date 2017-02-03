@@ -1,0 +1,28 @@
+﻿<div data-ng-show="vm.Item" class="col-md-5">
+    <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" class="form-control" id="title" data-ng-model="vm.Item.Title">
+    </div>
+
+    <div class="form-group">
+        <label for="location">Location</label>
+        <input type="text" id="location" class="form-control" data-ng-model="vm.Item.Location">
+    </div>
+
+    <div class="form-group">
+        <label for="type">Type</label>
+        <input type="text" id="type" class="form-control" data-ng-model="vm.Item.VacancyType">
+    </div>
+
+    <div class="form-group">
+        <label for="description">Description</label>
+        <textarea rows="6" type="text" class="form-control" id="description" data-ng-model="vm.Item.Description"></textarea>
+    </div>
+    
+    <div>
+        <label for="pay">Pay</label>
+        <input type="text" id="pay" class="form-control" data-ng-model="vm.Item.Pay">
+    </div>
+    
+    <button class="btn btn-default" data-ng-click="vm.Save()"><i class="fa fa-floppy-o"></i> Save</button>
+</div>

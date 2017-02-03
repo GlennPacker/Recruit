@@ -60,6 +60,14 @@
     <Compile Include="Migrations\201701261515527_2.Designer.cs">
       <DependentUpon>201701261515527_2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702011730462_Vacancies.cs" />
+    <Compile Include="Migrations\201702011730462_Vacancies.Designer.cs">
+      <DependentUpon>201702011730462_Vacancies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702011847185_VacanciesAddTitle.cs" />
+    <Compile Include="Migrations\201702011847185_VacanciesAddTitle.Designer.cs">
+      <DependentUpon>201702011847185_VacanciesAddTitle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RecruitContext.cs" />
@@ -82,6 +90,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201701261515527_2.resx">
       <DependentUpon>201701261515527_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702011730462_Vacancies.resx">
+      <DependentUpon>201702011730462_Vacancies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702011847185_VacanciesAddTitle.resx">
+      <DependentUpon>201702011847185_VacanciesAddTitle.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,0 +1,30 @@
+﻿
+<section id="vacancies" data-ng-controller="VacancyCtrl as vm">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">Vacancies</h2>
+                <h3 class="section-subheading text-muted">
+                    Latest positions and openings
+                </h3>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div style="padding-bottom:30px;" data-ng-repeat="vacancy in vm.Data">
+                <h4 class="vacancy-heading" data-ng-bind="vacancy.Title"></h4>
+                <span data-ng-bind="vacancy.Location"></span>
+                <p>
+                    <strong>
+                        <span data-ng-bind="vacancy.VacancyType"></span>
+                        <span data-ng-bind="vacancy.Pay | currency : '£'"></span>
+                    </strong>
+                </p>
+                <p class="text-muted">
+                    <pre data-ng-bind="vacancy.Description"></pre>
+                </p>
+                <a class="btn btn-default" href="mailto:info@finnesseconsulting.co.uk?subject={{vacancy.Title}}&body=please attatch cv">Apply</a>
+
+            </div>
+        </div>
+    </div>
+</section>

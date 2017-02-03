@@ -2,8 +2,14 @@
 
 @{
     ViewBag.Title = "Error";
+    Layout = null;
 }
-
-<h1 class="text-danger">Error.</h1>
-<h2 class="text-danger">An error occurred while processing your request.</h2>
-
+@Styles.Render("~/Content/css")
+<body>
+    <div class="yikes">
+        <article>
+            <h1 class="text-danger">Slight Error.</h1>
+            <h2 class="text-danger">a small insignificant error occured please do not be <span style="color:red">ALARMED!!!</span></h2>
+        </article>
+    </div>
+</body>

@@ -5,7 +5,7 @@ using Recruit.Infastructure;
 
 namespace Recruit.Services
 {
-    public class ServiceItemService : IServiceItemService
+    public class ServiceItemService : IBaseService<ServiceItem>
     {
         private readonly IRepository _repo;
 
@@ -29,6 +29,11 @@ namespace Recruit.Services
         public void Edit(ServiceItem model)
         {
             _repo.ServiceItem.Edit(model);
+        }
+
+        public void Delete(int id)
+        {
+            _repo.ServiceItem.Delete(id);
         }
     }
 }

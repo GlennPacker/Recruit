@@ -44,10 +44,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IMailService.cs" />
     <Compile Include="IService.cs" />
-    <Compile Include="IServiceItemService.cs" />
+    <Compile Include="IBaseService.cs" />
+    <Compile Include="MailService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service.cs" />
+    <Compile Include="VacancyService.cs" />
     <Compile Include="ServiceItemService.cs" />
   </ItemGroup>
   <ItemGroup>

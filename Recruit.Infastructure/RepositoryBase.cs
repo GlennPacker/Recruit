@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using Recruit.Domain;
@@ -16,8 +17,7 @@ namespace Recruit.Infastructure
 
         public T Get(int id)
         {
-            var result = _db.Set<T>().Find(id);
-            return result;
+            return GetById(id);
         }
 
         public IQueryable<T> GetList(List<int> ids)
@@ -55,6 +55,17 @@ namespace Recruit.Infastructure
         public void Save()
         {
             _db.SaveChanges();
+        }
+
+        public void Delete(int id)
+        {
+            _db.Set<T>().Remove(GetById(id));
+            Save();
+        }
+
+        public T GetById(int id)
+        {
+            return _db.Set<T>().Find(id);
         }
     }
 }

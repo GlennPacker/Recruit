@@ -1,0 +1,28 @@
+﻿<table class="table" data-ng-show="!vm.Item">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th style="width:33.333%;" class="text-center">Description</th>
+            <th>Type</th>
+            <th>Location</th>
+            <th>Pay</th>
+            <td></td>
+        </tr>
+    </thead>
+    <tr data-ng-repeat="row in vm.Data">
+        <td data-ng-bind="row.Title"></td>
+        <td style="width:33.333%;"><pre data-ng-bind="row.Description"></pre></td>
+        <td data-ng-bind="row.VacancyType"></td>
+        <td data-ng-bind="row.Location"></td>
+        <td data-ng-bind="row.Pay"></td>
+        <td>
+            <button class="btn btn-sm btn-default" data-ng-click="vm.Edit(row.Id)"> <i class="fa fa-pencil"></i> Edit</button>
+            <button class="btn btn-sm btn-danger" data-ng-click="vm.Delete(row.Id)"> <i class="fa fa-trash"></i> Delete</button>
+        </td>
+    </tr>
+    <tr data-ng-show="vm.Data.length < 3">
+        <td colspan="4">
+            <button class="btn btn-sm btn-default" data-ng-click="vm.Add()"> <i class="fa fa-plus"></i> Add</button>
+        </td>
+    </tr>
+</table>

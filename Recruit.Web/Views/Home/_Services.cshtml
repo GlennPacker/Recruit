@@ -1,5 +1,6 @@
 ﻿
-<section id="services">
+<section id="services" data-ng-controller="ServiceItemCtrl as vm">
+
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
@@ -10,29 +11,15 @@
             </div>
         </div>
         <div class="row text-center">
-            <div class="col-md-4">
+            <div class="col-md-4" data-ng-repeat="serviceItem in vm.Data">
                 <span class="fa-stack fa-4x">
                     <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                    <i class="fa fa-address-card-o fa-stack-1x fa-inverse"></i>
+                    <i class="fa fa-{{serviceItem.Icon}} fa-stack-1x fa-inverse"></i>
                 </span>
-                <h4 class="service-heading">Finnesse Consulting Solutions</h4>
-                <p class="text-muted">I would like to see some text for these sections</p>
-            </div>
-            <div class="col-md-4">
-                <span class="fa-stack fa-4x">
-                    <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                    <i class="fa fa-gbp fa-stack-1x fa-inverse"></i>
-                </span>
-                <h4 class="service-heading">Provide Financial Recruitment</h4>
-                <p class="text-muted">I would like to see some text for these sections</p>
-            </div>
-            <div class="col-md-4">
-                <span class="fa-stack fa-4x">
-                    <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                    <i class="fa fa-users fa-stack-1x fa-inverse"></i>
-                </span>
-                <h4 class="service-heading">Staffing Solutions On A Permanent And Temporary Basis</h4>
-                <p class="text-muted">I would like to see some text for these sections</p>
+                <h4 class="service-heading" data-ng-bind="serviceItem.Title"></h4>
+                <p class="text-muted" >
+                    <pre data-ng-bind="serviceItem.Description"></pre>
+                </p>
             </div>
         </div>
     </div>

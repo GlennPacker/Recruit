@@ -546,15 +546,54 @@ section h3.section-subheading {
 .team-member p {
   margin-top: 0;
 }
+
+.pt-lg{
+    margin-top: 30px;
+}
+
 aside.clients img {
   margin: 50px auto;
 }
-section#contact {
-  background-color: #222222;
-  background-image: url('/img/map-image.png');
-  background-position: center;
-  background-repeat: no-repeat;
+section#team {
+    background-color: #222222;
+    background-image: url('/Img/about/canary-wharf.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
+
+section#team p{
+    color: #222;
+    
+}
+
+section article{
+    margin-top: 45px;
+    background-color: rgba(255,255,255,0.9);
+    border-radius: 5px;
+    padding: 15px;
+}
+
+section#contact {
+    background-color: #222222;
+    background-image: url('/Img/Londonnight.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.callemail{
+    font-size: 30px;
+    margin-top: 60px;
+}
+
+.callemail i{
+    color: #fff;
+}
+section#team .section-heading,
 section#contact .section-heading {
   color: white;
 }
@@ -579,27 +618,27 @@ section#contact ::-webkit-input-placeholder {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
-  color: #eeeeee;
+  color: #888;
 }
 section#contact :-moz-placeholder {
   /* Firefox 18- */
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
-  color: #eeeeee;
+  color: #888;
 }
 section#contact ::-moz-placeholder {
   /* Firefox 19+ */
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
-  color: #eeeeee;
+  color: #888;
 }
 section#contact :-ms-input-placeholder {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
-  color: #eeeeee;
+  color: #888;
 }
 section#contact .text-danger {
   color: #e74c3c;
@@ -746,4 +785,46 @@ body {
     padding-left: 3px;
     padding-top: 3px;
     display: block;
+}
+
+.menubackground{
+    background-color: #222; 
+    padding:10px 0; 
+    border-bottom: 56px solid #222;
+}
+
+pre {
+    padding: 0;
+    margin: 0;
+    font-size: inherit;
+    line-height:unset;
+    word-break: break-all;
+    word-wrap: break-word;
+    background-color: transparent;
+    border: 0;
+    border-radius: 0;
+    color: #777;
+        font-size: 14px;
+    line-height: 1.75;
+}
+
+pre {
+    font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.btn-default{
+  color: white;
+  background-color: #fec503;
+  border-color: #f6bf01;
+}
+
+ article .callemail i{
+    color: black;
+}
+
+.yikes {
+    background-color: #222222;
+    background-image: url('/Img/End-of-the-World.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }

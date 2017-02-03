@@ -18,7 +18,7 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
-    <IISExpressSSLPort />
+    <IISExpressSSLPort>44355</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -198,6 +198,9 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\Api\ApiBaseController.cs" />
+    <Compile Include="Controllers\Api\ApiEmailController.cs" />
+    <Compile Include="Controllers\Api\ApiVacancyController.cs" />
     <Compile Include="Controllers\Api\ApiServiceItemController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JasmineController.cs" />
@@ -205,6 +208,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702021031333_useraccounts.cs" />
+    <Compile Include="Migrations\201702021031333_useraccounts.Designer.cs">
+      <DependentUpon>201702021031333_useraccounts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -234,9 +242,14 @@
     <Content Include="Img\about\2.png" />
     <Content Include="Img\about\3.jpg" />
     <Content Include="Img\about\4.png" />
+    <Content Include="Img\about\aboutus-300x166.png" />
+    <Content Include="Img\about\canary-wharf.jpg" />
+    <Content Include="Img\End-of-the-World.jpg" />
+    <Content Include="Img\london-300x166.png" />
     <Content Include="Img\Finnesse-consulting-solution-100x50.png" />
     <Content Include="Img\Finnesse-consulting-solution.png" />
     <Content Include="Img\header-bg.jpg" />
+    <Content Include="Img\Londonnight.jpg" />
     <Content Include="Img\map-image.png" />
     <Content Include="Img\slider-img-2.png" />
     <Content Include="Img\slider-img.png" />
@@ -258,7 +271,7 @@
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="fonts\FontAwesome.otf" />
     <None Include="Properties\PublishProfiles\FTP.pubxml" />
-    <None Include="Scripts\jquery-3.1.1.intellisense.js" />
+    <None Include="Properties\PublishProfiles\Live.pubxml" />
     <Content Include="Scripts\jasmine-samples\Player.js" />
     <Content Include="Scripts\jasmine-samples\PlayerSpec.js" />
     <Content Include="Scripts\jasmine-samples\Song.js" />
@@ -267,16 +280,19 @@
     <Content Include="Scripts\jasmine\console.js" />
     <Content Include="Scripts\jasmine\jasmine-html.js" />
     <Content Include="Scripts\jasmine\jasmine.js" />
-    <Content Include="Scripts\jquery-3.1.1.js" />
-    <Content Include="Scripts\jquery-3.1.1.slim.js" />
-    <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
-    <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
+    <None Include="Scripts\jquery-1.12.4.intellisense.js" />
+    <Content Include="Scripts\jquery-1.12.4.js" />
+    <Content Include="Scripts\jquery-1.12.4.min.js" />
+    <Content Include="Scripts\jquery-1.12.4.min.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.easing.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="Views\Account\_Nav.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
     <None Include="Views\Admin\Index.cshtml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -300,7 +316,7 @@
     <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
     <Content Include="Views\Account\ForgotPassword.cshtml" />
     <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\_Login.cshtml" />
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\ResetPassword.cshtml" />
     <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
@@ -314,7 +330,7 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\Shared\_Nav.cshtml" />
+    <Content Include="Views\Admin\_Nav.cshtml" />
     <Content Include="Views\Home\_Welcome.cshtml" />
     <Content Include="Views\Home\_Services.cshtml" />
     <Content Include="Views\Home\_Portfolio.cshtml" />
@@ -322,6 +338,15 @@
     <Content Include="Views\Home\_Team.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Jasmine\SpecRunner.cshtml" />
+    <Content Include="Views\Admin\_ServiceItemList.cshtml" />
+    <Content Include="Views\Admin\_ServiceItemEdit.cshtml" />
+    <Content Include="Views\Admin\_Services.cshtml" />
+    <Content Include="Views\Admin\_Vacancies.cshtml" />
+    <Content Include="Views\Admin\_VacanciesList.cshtml" />
+    <Content Include="Views\Admin\_VacancyEdit.cshtml" />
+    <Content Include="Views\Home\_Nav.cshtml" />
+    <Content Include="Views\Shared\_Nav.cshtml" />
+    <Content Include="Views\Home\_Vacancies.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -346,8 +371,18 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="Js\Admin\admin.ts" />
+    <TypeScriptCompile Include="Js\Admin\controllers\VacancyCtrl.ts" />
     <TypeScriptCompile Include="Js\Admin\controllers\ServiceItemCtrl.ts" />
+    <TypeScriptCompile Include="Js\App\app.ts" />
+    <TypeScriptCompile Include="Js\App\controllers\EmailCtrl.ts" />
+    <TypeScriptCompile Include="Js\App\controllers\VacancyCtrl.ts" />
+    <TypeScriptCompile Include="Js\domain\Email.ts" />
+    <TypeScriptCompile Include="Js\domain\Vacancy.ts" />
+    <TypeScriptCompile Include="Js\Services\services.ts" />
+    <TypeScriptCompile Include="Js\Admin\admin.ts" />
+    <TypeScriptCompile Include="Js\domain\ServiceItem.ts" />
+    <TypeScriptCompile Include="Js\App\controllers\ServiceItemCtrl.ts" />
+    <TypeScriptCompile Include="Js\Services\DataAccessService.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-animate.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-component-router.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-cookies.d.ts" />
@@ -361,6 +396,11 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201702021031333_useraccounts.resx">
+      <DependentUpon>201702021031333_useraccounts.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -381,7 +421,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>49770</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:49770/</IISUrl>
+          <IISUrl>http://localhost:44355/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

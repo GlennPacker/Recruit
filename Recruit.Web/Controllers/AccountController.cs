@@ -13,6 +13,7 @@ using Recruit.Web.Models;
 namespace Recruit.Web.Controllers
 {
     [Authorize]
+    [RequireHttps]
     public class AccountController : Controller
     {
         private ApplicationSignInManager _signInManager;
@@ -149,6 +150,7 @@ namespace Recruit.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
+#if DEBUG
             if (ModelState.IsValid)
             {
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
@@ -170,6 +172,10 @@ namespace Recruit.Web.Controllers
 
             // If we got this far, something failed, redisplay form
             return View(model);
+#else
+            return new HttpNotFoundResult();
+#endif
+
         }
 
         //
@@ -387,8 +393,6 @@ namespace Recruit.Web.Controllers
 
         //
         // POST: /Account/LogOff
-        [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult LogOff()
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
