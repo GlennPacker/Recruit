@@ -13,7 +13,9 @@ namespace Recruit.Domain
             public static string Subject { get { return ConfigurationManager.AppSettings["Subject"]; } }
             public static string SmtpUserName { get  { return ConfigurationManager.AppSettings["SmtpUserName"];} }
             public static string SmtpPassword { get  { return ConfigurationManager.AppSettings["SmtpPassword"];} }
-            public static string SmtpHost { get { return ConfigurationManager.AppSettings["SmtpHost"]; } }
+            public static string SmtpHost { get { return ConfigurationManager.AppSettings["SmtpHost"]; } }   
         }
+
+        public static string Tel { get { return ConfigurationManager.AppSettings["Tel"]; } }
     }
 }

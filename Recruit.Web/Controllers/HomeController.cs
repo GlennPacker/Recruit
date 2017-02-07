@@ -2,7 +2,7 @@
 
 namespace Recruit.Web.Controllers
 {
-    [RequireHttps]
+    //[RequireHttps]
     public class HomeController : Controller
     {
         public ActionResult Index()
